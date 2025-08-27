@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchoolPay - Demo Sistem Pembayaran Sekolah Blockchain</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-2xl font-bold text-gray-900">SchoolPay</h1>
+                </div>
+                <div class="text-sm text-gray-600">
+                    Sistem Pembayaran Sekolah Blockchain
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">
+                Pembayaran Sekolah<br>
+                <span class="text-yellow-300">Berbasis Blockchain</span>
+            </h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Platform pembayaran modern yang aman, transparan, dan efisien untuk semua kebutuhan sekolah. 
+                Didukung teknologi blockchain Polygon.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="startDemo()" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-8 rounded-lg text-lg transition-colors">
+                    🚀 Mulai Demo
+                </button>
+                <button onclick="showInstructions()" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors">
+                    📖 Cara Install
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center text-gray-900 mb-12">Fitur Utama</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Keamanan Blockchain</h4>
+                    <p class="text-gray-600">Transaksi aman dan transparan menggunakan Polygon</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Pembayaran Cepat</h4>
+                    <p class="text-gray-600">Proses pembayaran instan dengan biaya rendah</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Multi-Platform</h4>
+                    <p class="text-gray-600">Akses mudah untuk orang tua, siswa, dan admin</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-2">Berbagai Pembayaran</h4>
+                    <p class="text-gray-600">SPP, kegiatan, kantin, dan donasi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Types -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center text-gray-900 mb-12">Jenis Pembayaran</h3>
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
+                    <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">SPP Bulanan</h4>
+                        <p class="text-gray-600">Pembayaran SPP rutin setiap bulan dengan reminder otomatis</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
+                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Kegiatan Sekolah</h4>
+                        <p class="text-gray-600">Biaya ekstrakurikuler, study tour, dan acara sekolah</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
+                    <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-4 h-4 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Kantin Digital</h4>
+                        <p class="text-gray-600">Top-up saldo kantin untuk pembayaran cashless</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
+                    <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2">Donasi</h4>
+                        <p class="text-gray-600">Kontribusi untuk pengembangan fasilitas sekolah</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center text-gray-900 mb-12">Cara Kerja</h3>
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                    <h4 class="text-xl font-semibold mb-2">Login & Connect Wallet</h4>
+                    <p class="text-gray-600">Masuk ke akun dan hubungkan wallet MetaMask</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                    <h4 class="text-xl font-semibold mb-2">Pilih Pembayaran</h4>
+                    <p class="text-gray-600">Pilih jenis pembayaran dan konfirmasi jumlah</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                    <h4 class="text-xl font-semibold mb-2">Transaksi Selesai</h4>
+                    <p class="text-gray-600">Pembayaran diproses dan tercatat di blockchain</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12">Teknologi yang Digunakan</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <h4 class="text-xl font-semibold mb-4 text-blue-400">Frontend</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>React.js + Tailwind CSS</li>
+                        <li>Ethers.js</li>
+                        <li>MetaMask Integration</li>
+                        <li>QR Code Generator</li>
+                    </ul>
+                </div>
+
+                <div class="text-center">
+                    <h4 class="text-xl font-semibold mb-4 text-green-400">Backend</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Node.js + Express</li>
+                        <li>MongoDB</li>
+                        <li>JWT Authentication</li>
+                        <li>RESTful API</li>
+                    </ul>
+                </div>
+
+                <div class="text-center">
+                    <h4 class="text-xl font-semibold mb-4 text-purple-400">Blockchain</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Polygon (Matic) Network</li>
+                        <li>Solidity Smart Contract</li>
+                        <li>Web3 Provider</li>
+                        <li>Transaction Verification</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Accounts -->
+    <section class="py-16 bg-blue-50">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold text-gray-900 mb-8">Demo Accounts</h3>
+            <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h4 class="text-xl font-semibold mb-4 text-blue-600">👨‍👩‍👧‍👦 Orang Tua</h4>
+                    <div class="text-left space-y-2">
+                        <p><strong>Email:</strong> parent@demo.com</p>
+                        <p><strong>Password:</strong> password123</p>
+                        <p class="text-sm text-gray-600">Akses: Dashboard, pembayaran, riwayat</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h4 class="text-xl font-semibold mb-4 text-green-600">👨‍💼 Admin</h4>
+                    <div class="text-left space-y-2">
+                        <p><strong>Email:</strong> admin@demo.com</p>
+                        <p><strong>Password:</strong> password123</p>
+                        <p class="text-sm text-gray-600">Akses: Dashboard admin, laporan keuangan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                    </svg>
+                </div>
+                <span class="text-xl font-bold">SchoolPay</span>
+            </div>
+            <p class="text-gray-400 mb-4">Sistem Pembayaran Sekolah Berbasis Blockchain</p>
+            <p class="text-sm text-gray-500">© 2024 SchoolPay. Memudahkan pembayaran sekolah dengan teknologi blockchain.</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg max-w-2xl w-full mx-4 p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="modal-title" class="text-xl font-semibold"></h3>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <script>
+        function startDemo() {
+            showModal('🚀 Mulai Demo', `
+                <div class="space-y-4">
+                    <p class="text-gray-600">Untuk menjalankan demo SchoolPay, ikuti langkah berikut:</p>
+                    
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">1. Install Dependencies</h4>
+                        <code class="text-sm bg-gray-800 text-green-400 p-2 rounded block">
+                            cd /home/dzaky/Desktop/Project<br>
+                            npm run install-all
+                        </code>
+                    </div>
+
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">2. Setup Database</h4>
+                        <code class="text-sm bg-gray-800 text-green-400 p-2 rounded block">
+                            cd server<br>
+                            node seedData.js
+                        </code>
+                    </div>
+
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">3. Jalankan Aplikasi</h4>
+                        <code class="text-sm bg-gray-800 text-green-400 p-2 rounded block">
+                            npm run dev
+                        </code>
+                    </div>
+
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2 text-blue-800">🌐 Akses Aplikasi</h4>
+                        <p class="text-sm text-blue-700">
+                            Frontend: <strong>http://localhost:3000</strong><br>
+                            Backend: <strong>http://localhost:5000</strong>
+                        </p>
+                    </div>
+
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2 text-yellow-800">⚠️ Persyaratan</h4>
+                        <ul class="text-sm text-yellow-700 space-y-1">
+                            <li>• Node.js (v16+)</li>
+                            <li>• MongoDB</li>
+                            <li>• MetaMask Extension</li>
+                        </ul>
+                    </div>
+                </div>
+            `);
+        }
+
+        function showInstructions() {
+            showModal('📖 Cara Install', `
+                <div class="space-y-4">
+                    <p class="text-gray-600">Panduan lengkap instalasi SchoolPay:</p>
+                    
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">Prerequisites</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• Node.js (v16 atau lebih baru)</li>
+                            <li>• MongoDB (local atau cloud)</li>
+                            <li>• MetaMask browser extension</li>
+                            <li>• Git</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">1. Clone Repository</h4>
+                        <code class="text-sm bg-gray-800 text-green-400 p-2 rounded block">
+                            git clone &lt;repository-url&gt;<br>
+                            cd school-payment-blockchain
+                        </code>
+                    </div>
+
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">2. Install Dependencies</h4>
+                        <code class="text-sm bg-gray-800 text-green-400 p-2 rounded block">
+                            npm install<br>
+                            npm run install-all
+                        </code>
+                    </div>
+
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">3. Setup Environment</h4>
+                        <p class="text-sm mb-2">Buat file <code>.env</code> di folder <code>server/</code>:</p>
+                        <code class="text-sm bg-gray-800 text-green-400 p-2 rounded block">
+                            PORT=5000<br>
+                            MONGODB_URI=mongodb://localhost:27017/school_payment<br>
+                            JWT_SECRET=your_jwt_secret_key_here
+                        </code>
+                    </div>
+
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">4. Seed Demo Data</h4>
+                        <code class="text-sm bg-gray-800 text-green-400 p-2 rounded block">
+                            cd server<br>
+                            node seedData.js
+                        </code>
+                    </div>
+
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2">5. Jalankan Aplikasi</h4>
+                        <code class="text-sm bg-gray-800 text-green-400 p-2 rounded block">
+                            npm run dev
+                        </code>
+                    </div>
+
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-2 text-green-800">✅ Selesai!</h4>
+                        <p class="text-sm text-green-700">
+                            Aplikasi akan berjalan di:<br>
+                            • Frontend: http://localhost:3000<br>
+                            • Backend: http://localhost:5000
+                        </p>
+                    </div>
+                </div>
+            `);
+        }
+
+        function showModal(title, content) {
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-content').innerHTML = content;
+            document.getElementById('modal').classList.remove('hidden');
+            document.getElementById('modal').classList.add('flex');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+            document.getElementById('modal').classList.remove('flex');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
