@@ -18,7 +18,12 @@ app.use(cors());
 app.use(express.json());
 
 // Database connection
-mongoose.connect(process.env.MONGODB_URI, {
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://dzakyazr:pK9GLDKsiyF6Bb6p@cluster0.ymovz7m.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
+console.log('Attempting to connect to MongoDB...');
+console.log('MongoDB URI:', MONGODB_URI ? 'URI is defined' : 'URI is undefined');
+
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   dbName: 'school_payment'
