@@ -18,6 +18,12 @@ function isPortAvailable(port) {
 }
 
 async function findAvailablePort(startPort) {
+  // Use PORT from environment variable if available
+  const envPort = process.env.PORT;
+  if (envPort) {
+    return parseInt(envPort, 10);
+  }
+
   let port = startPort;
   while (!(await isPortAvailable(port))) {
     port++;
